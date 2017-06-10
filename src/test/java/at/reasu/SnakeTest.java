@@ -4,23 +4,32 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/***************************************
- * Created by regula on 10.06.17.
- ***************************************/
 public class SnakeTest {
 
 	@Test
-	public void SnakeIsInitialised() throws Exception {
-		Snake snake = new Snake();
-		assertNotNull(snake);
+	public void snakeIsInitialised() {
+		Coordinate head = new Coordinate(4, 5);
+		Coordinate tail = new Coordinate(2, 2);
+		Snake snake = new Snake(head, tail, Direction.NORTH);
+
+		assertEquals(4, snake.getHead().getxValue());
+		assertEquals(5, snake.getHead().getyValue());
+		assertEquals(2, snake.getTail().getxValue());
+		assertEquals(2, snake.getTail().getyValue());
+		assertEquals(Direction.NORTH, snake.getDirection());
 	}
 
 	@Test
-	public void snakeIsDeployed() throws Exception {
-		int x=2;
-		int y=2;
-		Coordinate initSnakePos = new Coordinate(x,y);
-		World worldSize = new World(x, y);
-		assertEquals(true,initSnakePos.getxValue() > worldSize.getWidth());
+	public void snakeMovesStraight() {
+		Coordinate head = new Coordinate(4, 5);
+		Coordinate tail = new Coordinate(2, 2);
+		Snake snake = new Snake(head, tail, Direction.NORTH);
+		snake.moveStraigth();
+
+		assertEquals(4, snake.getHead().getxValue());
+		assertEquals(6, snake.getHead().getyValue());
+		assertEquals(2, snake.getTail().getxValue());
+		assertEquals(3, snake.getTail().getyValue());
+		assertEquals(Direction.NORTH, snake.getDirection());
 	}
 }

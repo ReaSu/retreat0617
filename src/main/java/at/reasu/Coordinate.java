@@ -1,8 +1,5 @@
 package at.reasu;
 
-/***************************************
- * Created by regula on 10.06.17.
- ***************************************/
 public class Coordinate {
 	private int xValue;
 	private int yValue;
@@ -19,4 +16,5 @@ public class Coordinate {
 	public int getyValue() {
 		return yValue;
 	}
+
 }
