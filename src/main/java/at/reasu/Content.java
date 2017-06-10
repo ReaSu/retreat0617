@@ -1,5 +1,7 @@
 package at.reasu;
 
 public enum Content {
-	Snake
+	Snake,
+	Empty,
+	Apple
 }

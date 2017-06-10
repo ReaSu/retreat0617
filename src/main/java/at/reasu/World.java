@@ -9,6 +9,6 @@ public class World {
 	}
 
 	public Cell getCellAt(Coordinate coordinate) {
-		return new Cell();
+		return new Cell(Content.Empty);
 	}
 }

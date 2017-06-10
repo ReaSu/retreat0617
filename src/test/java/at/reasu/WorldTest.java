@@ -2,11 +2,9 @@ package at.reasu;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/***************************************
- * Created by regula on 10.06.17.
- ***************************************/
 public class WorldTest {
 	@Test
 	public void shouldGiveCell() {
@@ -15,6 +13,18 @@ public class WorldTest {
 		assertNotNull(cell);
 	}
 
+	@Test
+	public void shouldGiveCellWithCoordinates() {
+		//given
+		World world = new World(10, 10);
+		Coordinate expected = new Coordinate(1,1);
+		//when
+		Cell cell = world.getCellAt(new Coordinate(1,1));
+		Coordinate realValue = cell.getCoordinate();
+		//then
+		assertEquals(expected.getxValue(), realValue.getxValue());
+		assertEquals(expected.getyValue(), realValue.getyValue());
+	}
 
 }
 // fail on invalid coordinates

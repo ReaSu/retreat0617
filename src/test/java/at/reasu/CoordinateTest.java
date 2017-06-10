@@ -23,7 +23,14 @@ public class CoordinateTest {
 		Assert.assertEquals(x, 3);
 	}
 
-//	{
+	@Test
+	public void YValueIsInitialisedFromConstructor() {
+		Coordinate coordinate = new Coordinate(3,3);
+		int y = coordinate.getyValue();
+		Assert.assertEquals(y, 3);
+	}
+
+	//	{
 //		whenCoordinateIsConstructedWith(2, 3);
 //		thenXShouldBe(2);
 //	}
