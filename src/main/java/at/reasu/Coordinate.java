@@ -17,4 +17,11 @@ public class Coordinate {
 		return yValue;
 	}
 
+	public void setyValue(int yValue) {
+		this.yValue = yValue;
+	}
+
+	public void setxValue(int xValue) {
+		this.xValue = xValue;
+	}
 }

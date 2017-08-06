@@ -1,10 +1,7 @@
 package at.reasu;
 
-import java.awt.event.MouseEvent;
+import static at.reasu.Direction.NORTH;
 
-/***************************************
- * Created by regula on 10.06.17.
- ***************************************/
 public class Snake {
 
 	private Coordinate head;
@@ -27,5 +24,32 @@ public class Snake {
 
 	public Direction getDirection() {
 		return direction;
+	}
+
+	public void moveStraigth() {
+		move(direction);
+	}
+
+	private void move(Direction direction) {
+		switch (direction) {
+			case NORTH:
+				head.setyValue(head.getyValue() + 1);
+				tail.setyValue(tail.getyValue() + 1);
+				break;
+			case EAST:
+				head.setxValue(head.getxValue() + 1);
+				tail.setxValue(tail.getxValue() + 1);
+				break;
+			case SOUTH:
+				head.setyValue(head.getyValue() - 1);
+				tail.setyValue(tail.getyValue() - 1);
+				break;
+			case WEST:
+				head.setxValue(head.getxValue() - 1);
+				tail.setxValue(tail.getxValue() - 1);
+				break;
+			default:
+				throw new DirectionException();
+		}
 	}
 }
